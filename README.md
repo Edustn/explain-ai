@@ -26,10 +26,10 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3) Configure a chave da API (exemplo com OpenAI):
+3) Configure a chave da API (Gemini):
 ```bash
 cp .env.example .env
-# edite o arquivo .env e preencha OPENAI_API_KEY
+# edite o arquivo .env e preencha GOOGLE_API_KEY
 ```
 
 4) Crie o banco de dados:
@@ -50,4 +50,4 @@ python3 scripts/run_agent.py --question "Liste os municipios com mais casos e ex
 ## Observacoes
 - Os dados sao ficticios e servem apenas para exemplo.
 - O agente executa a consulta `SELECT * FROM surtos_dengue;` antes de gerar a explicacao.
-- Voce pode trocar o modelo definindo `OPENAI_MODEL` no `.env`.
+- Voce pode trocar o modelo definindo `GEMINI_MODEL` no `.env`.

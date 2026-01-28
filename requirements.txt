@@ -1,4 +1,4 @@
 agno
-openai
+google-genai>=1.52.0
 sqlalchemy
 python-dotenv

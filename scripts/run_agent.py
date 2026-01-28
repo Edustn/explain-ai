@@ -7,16 +7,16 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from agno.agent import Agent
-from agno.models.openai import OpenAIChat
+from agno.models.google import Gemini
 from agno.tools.sql import SQLTools
 
 
 def build_agent(db_path: Path) -> Agent:
     db_url = f"sqlite:///{db_path}"
-    model_id = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    model_id = os.getenv("GEMINI_MODEL", "gemini-2.0-flash-001")
 
     return Agent(
-        model=OpenAIChat(id=model_id),
+        model=Gemini(id=model_id),
         tools=[SQLTools(db_url=db_url)],
         instructions=[
             "Voce e um analista de saude publica.",
@@ -34,9 +34,9 @@ def build_agent(db_path: Path) -> Agent:
 def main() -> None:
     load_dotenv()
 
-    if not os.getenv("OPENAI_API_KEY"):
+    if not os.getenv("GOOGLE_API_KEY"):
         raise EnvironmentError(
-            "OPENAI_API_KEY nao configurada. Preencha o arquivo .env "
+            "GOOGLE_API_KEY nao configurada. Preencha o arquivo .env "
             "ou exporte a variavel de ambiente."
         )
 
