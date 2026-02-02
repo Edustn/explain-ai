@@ -47,7 +47,7 @@ Opcional: envie uma pergunta personalizada:
 python3 scripts/run_agent.py --question "Liste os municipios com mais casos e explique o padrao geral."
 ```
 
-## Observacoes
+## Observações
 - Os dados sao ficticios e servem apenas para exemplo.
 - O agente executa a consulta `SELECT * FROM surtos_dengue;` antes de gerar a explicacao.
 - Voce pode trocar o modelo definindo `GEMINI_MODEL` no `.env`.

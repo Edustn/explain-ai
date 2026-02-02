@@ -29,7 +29,7 @@ def build_agent(db_path: Path) -> Agent:
             "maiores incidencias por 100k, distribuicao por sorotipo e nivel de risco.",
             "Use apenas os dados retornados pelo SQL.",
         ],
-        show_tool_calls=True,
+        # show_tool_calls=True,
         markdown=True,
     )
 
